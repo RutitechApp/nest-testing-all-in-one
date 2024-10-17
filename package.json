@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build && cp -r ./views ./dist/ && cp -r ./public ./dist/",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -23,8 +23,6 @@
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
-    "ejs": "^3.1.10",
-    "express": "^4.21.1",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
