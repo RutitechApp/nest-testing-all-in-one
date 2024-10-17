@@ -6,9 +6,14 @@ import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
+  // Set the views directory
   app.setBaseViewsDir(join(__dirname, '..', 'views'));
-  app.useStaticAssets(join(__dirname, '..', 'public'));
+
+  // Set the view engine to EJS
   app.setViewEngine('ejs');
+
+  // Serve static assets from the 'public' folder
+  app.useStaticAssets(join(__dirname, '..', 'public'));
   await app.listen(5656);
 }
 bootstrap();
