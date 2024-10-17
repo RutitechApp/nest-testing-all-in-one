@@ -11,9 +11,10 @@
       "src": "/(.*)",
       "dest": "dist/main.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
     }
-  ],
-  "static": {
-    "public": "public"
-  }
+  ]
 }
