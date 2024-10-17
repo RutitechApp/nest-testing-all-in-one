@@ -2,19 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/main.js",
-      "use": "@vercel/node"
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["dist/**", "views/**", "public/**"]
+      }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/main.js",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
-    },
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
+      "dest": "dist/main.js"
     }
-  ]
+  ],
+  "buildCommand": "npm install && npm run build"
 }
